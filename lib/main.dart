@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => JobCubit()),
         BlocProvider(create: (_) => CompanyCubit()),
         BlocProvider(create: (_) => ApplyCubit()),
+        BlocProvider(create: (_) => EducationCubit()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

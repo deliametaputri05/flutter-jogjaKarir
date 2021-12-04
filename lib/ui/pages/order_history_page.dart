@@ -18,10 +18,10 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
         if (state is ApplyLoaded) {
           if (state.apply.length == 0) {
             return IllustrationPage(
-              title: 'Ouch! Hungry',
+              title: 'Saya Pencari Kerja !',
               subtitle: 'Seems you like have not\nordered any food yet',
               picturePath: 'assets/love_burger.png',
-              buttonTitle1: 'Find Foods',
+              buttonTitle1: 'Temukan Karir',
               buttonTap1: () {},
             );
           } else {
@@ -48,11 +48,11 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Lamar Pekerjaan',
+                              'Riwayat',
                               style: blackFontStyle1,
                             ),
                             Text(
-                              'Pekerjaan terbaik',
+                              'Status lamar pekerjaan',
                               style: greyFontStyle.copyWith(
                                   fontWeight: FontWeight.w300),
                             )

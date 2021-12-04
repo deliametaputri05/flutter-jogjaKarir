@@ -1,6 +1,8 @@
 part of 'pages.dart';
 
 class ProfilePage extends StatefulWidget {
+  final Education edu;
+  ProfilePage({this.edu});
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -144,13 +146,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 margin: EdgeInsets.only(bottom: 20),
                                 child: TextButton.icon(
                                   onPressed: () {
-                                    Get.to(() => InfoProfilePage());
-
-                                    // Navigator.push(
-                                    //     context,
-                                    //     CupertinoPageRoute(
-                                    //         builder: (context) =>
-                                    //             DetailProfil()));
+                                    Get.to(InfoProfilePage());
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: Colors.blue,
@@ -196,13 +192,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             Container(
                               margin: EdgeInsets.only(bottom: 20),
                               child: TextButton.icon(
-                                onPressed: () {
-                                  // showDialog(
-                                  //     context: context,
-                                  //     builder: (context) {
-                                  //       return AlertLogout();
-                                  //     });
-                                },
+                                onPressed: () {},
                                 icon: CircleAvatar(
                                   backgroundColor: Colors.red,
                                   radius: 18,

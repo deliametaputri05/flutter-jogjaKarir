@@ -70,7 +70,7 @@ class OrderListItem extends StatelessWidget {
                         )
                       : (apply.status == ApplyStatus.diterima)
                           ? Text(
-                              'Di Terima',
+                              'Di Terima \nCek email Anda',
                               style: GoogleFonts.poppins(
                                   color: '1ABC9C'.toColor(), fontSize: 10),
                             )

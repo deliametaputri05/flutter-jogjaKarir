@@ -10,7 +10,7 @@ class Company {
   String email;
   String category;
   String location;
-  String foundedYear;
+  int foundedYear;
 
   Company(
       {this.id,
@@ -33,7 +33,7 @@ class Company {
     category = json['category'];
     location = json['location'];
     picturePath = json['picturePath'];
-    foundedYear = json['foundedYear'];
+    foundedYear = json['founded_year'];
   }
 
   Map<String, dynamic> toJson() {
@@ -46,7 +46,7 @@ class Company {
       'category': category,
       'location': location,
       'picturePath': picturePath,
-      'foundedYear': foundedYear,
+      'founded_year': foundedYear,
     };
   }
 }

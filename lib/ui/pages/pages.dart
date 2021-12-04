@@ -26,7 +26,6 @@ part 'add_profile_page.dart';
 part 'main_page.dart';
 part 'job_page.dart';
 part 'job_details_page.dart';
-part 'payment_page.dart';
 part 'illustration_page.dart';
 part 'success_order_page.dart';
 part 'success_sign_up_page.dart';

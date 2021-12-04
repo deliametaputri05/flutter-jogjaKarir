@@ -131,6 +131,9 @@ class UserServices {
           'name': user.name,
           'email': user.email,
           'password': password,
+          'password_confirmation': password,
+          'noHp': user.noHp,
+          'address': user.address,
           'picturePath': user.picturePath
         }));
 
@@ -140,6 +143,8 @@ class UserServices {
 
     var data = jsonDecode(response.body);
 
+    // print("register");
+
     User.token = data['data']['access_token'];
     User value = User.fromJson(data['data']['user']);
 
@@ -147,7 +152,7 @@ class UserServices {
       ApiReturnValue<String> result = await uploadProfilePicture(pictureFile);
       if (result.value != null) {
         value = value.copyWith(
-            picturePath: "http://192.168.100.187:8000/storage/" + result.value);
+            picturePath: "http://192.168.43.86:8000/storage/" + result.value);
       }
     }
 

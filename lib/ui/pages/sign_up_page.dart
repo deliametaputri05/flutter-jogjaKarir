@@ -12,6 +12,8 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController noHPController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   bool isLoading = false;
   bool _isHidePassword = true;
   String error = '';
@@ -45,7 +47,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Container(
               width: 110,
               height: 110,
-              margin: EdgeInsets.only(top: 26),
+              // margin: EdgeInsets.only(top: 26),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -71,8 +73,8 @@ class _SignUpPageState extends State<SignUpPage> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Full Name",
-              style: blackFontStyle2,
+              "Nama Lengkap",
+              style: blackFontStyle3,
             ),
           ),
           Container(
@@ -87,16 +89,16 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.person, color: Colors.blue),
                   border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Type your full name'),
+                  hintStyle: greyFontStyle.copyWith(fontSize: 15),
+                  hintText: 'Nama Lengkap'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Email Address",
-              style: blackFontStyle2,
+              "Email",
+              style: blackFontStyle3,
             ),
           ),
           Container(
@@ -113,8 +115,8 @@ class _SignUpPageState extends State<SignUpPage> {
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.email_outlined, color: Colors.blue),
                   border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Type your email address'),
+                  hintStyle: greyFontStyle.copyWith(fontSize: 15),
+                  hintText: 'Alamat Email'),
             ),
           ),
           Container(
@@ -122,7 +124,7 @@ class _SignUpPageState extends State<SignUpPage> {
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
               "Password",
-              style: blackFontStyle2,
+              style: blackFontStyle3,
             ),
           ),
           Container(
@@ -157,9 +159,62 @@ class _SignUpPageState extends State<SignUpPage> {
                     prefixIcon:
                         Icon(Icons.lock_outline_sharp, color: Colors.blue),
                     border: InputBorder.none,
-                    hintStyle: greyFontStyle,
-                    hintText: 'Type your password'),
+                    hintStyle: greyFontStyle.copyWith(fontSize: 15),
+                    hintText: 'Password'),
               ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              "No Telephone",
+              style: blackFontStyle3,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.blue)),
+            child: TextFormField(
+              validator: (value) =>
+                  value.isEmpty ? 'Isi Email-mu disini' : null,
+              controller: noHPController,
+              decoration: InputDecoration(
+                  prefixIcon:
+                      Icon(Icons.smartphone_outlined, color: Colors.blue),
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle.copyWith(fontSize: 15),
+                  hintText: 'No Telephone'),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              "Alamat Asal",
+              style: blackFontStyle3,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.blue)),
+            child: TextFormField(
+              validator: (value) =>
+                  value.isEmpty ? 'Isi Email-mu disini' : null,
+              controller: addressController,
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.house_rounded, color: Colors.blue),
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle.copyWith(fontSize: 15),
+                  hintText: 'Alamat Asal'),
             ),
           ),
           Container(
@@ -180,6 +235,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           User(
                             name: nameController.text,
                             email: emailController.text,
+                            noHp: emailController.text,
+                            address: emailController.text,
                           ),
                           passwordController.text,
                           pictureFile);
@@ -198,7 +255,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               color: Colors.white,
                             ),
                             titleText: Text(
-                              "Sign Up Failed",
+                              "Gagal Register",
                               style: GoogleFonts.poppins(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600),

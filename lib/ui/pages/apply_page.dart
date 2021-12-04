@@ -66,7 +66,7 @@ class _ApplyPageState extends State<ApplyPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  'Upload CV Kamu',
+                                  'Upload CV (Pdf)',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 16,
@@ -162,7 +162,7 @@ class _ApplyPageState extends State<ApplyPage> {
 
                                 if (url != null) {
                                   Get.snackbar("berhasil", "melamar pekerjaan");
-                                   setState(() {
+                                  setState(() {
                                     isLoading = false;
                                   });
                                 } else {

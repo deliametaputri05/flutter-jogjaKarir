@@ -35,8 +35,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                 IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {
-                    // Navigator.push(context,
-                    //     CupertinoPageRoute(builder: (context) => Search()));
+                    Navigator.push(context,
+                        CupertinoPageRoute(builder: (context) => SearchPage()));
                   },
                 ),
               ],

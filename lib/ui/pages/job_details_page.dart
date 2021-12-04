@@ -195,14 +195,42 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                             height: 16,
                           ),
                           Text(
-                              (selectedIndex == 0)
-                                  ? widget.apply.job.desc
-                                  : (selectedIndex == 1)
-                                      ? widget.apply.job.requirement
-                                      : (selectedIndex == 2)
-                                          ? widget.apply.job.facilities
-                                          : widget.apply.job.company.desc,
-                              style: blackFontStyle3.copyWith(fontSize: 13))
+                            (selectedIndex == 0)
+                                ? widget.apply.job.desc +
+                                    "\n\n" +
+                                    "Kouta Pekerja   : " +
+                                    widget.apply.job.qouta.toString() +
+                                    "\n\n" +
+                                    "Batas Waktu    : " +
+                                    widget.apply.job.lastDate
+                                : (selectedIndex == 1)
+                                    ? widget.apply.job.requirement +
+                                        "\n\n" +
+                                        "Batas Umur                   : " +
+                                        widget.apply.job.age +
+                                        " Tahun" +
+                                        "\n\n" +
+                                        "Pendidikan Terakhir   : " +
+                                        widget.apply.job.lastEdu +
+                                        "\n\n" +
+                                        "Pengalaman Kerja     : " +
+                                        widget.apply.job.workExp
+                                    : (selectedIndex == 2)
+                                        ? widget.apply.job.facilities
+                                        : widget.apply.job.company.desc +
+                                            "\n\n" +
+                                            "Tahun Berdiri    : " +
+                                            widget.apply.job.company.foundedYear
+                                                .toString() +
+                                            "\n\n" +
+                                            "Website              : " +
+                                            widget.apply.job.company.website +
+                                            "\n\n" +
+                                            "Email                  : " +
+                                            widget.apply.job.company.email,
+                            style: blackFontStyle3.copyWith(fontSize: 13),
+                            textAlign: TextAlign.left,
+                          )
                           // Column(
                           //   children: ((selectedIndex == 0)
                           //           ? [

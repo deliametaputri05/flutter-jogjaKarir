@@ -1,6 +1,8 @@
 part of 'pages.dart';
 
 class InfoProfilePage extends StatefulWidget {
+  final Education edu;
+  InfoProfilePage({this.edu});
   @override
   _InfoProfilePageState createState() => _InfoProfilePageState();
 }
